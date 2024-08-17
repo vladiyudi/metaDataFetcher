@@ -23,36 +23,45 @@ Live demo: [https://urlfetcherfe.nw.r.appspot.com/](https://urlfetcherfe.nw.r.ap
 
 1. Clone the repository:
 
-```git clone https://github.com/yourusername/url-metadata-fetcher.git
+```bash 
+git clone https://github.com/yourusername/url-metadata-fetcher.git
+```
 
 
 2. Set up the backend:
 
-```cd be_url_metadata_fetcher
+```bash 
+cd be_url_metadata_fetcher
 npm install
+```
 
 Create a `.env` file in the `be_url_metadata_fetcher` directory and add:
 
-```FRONTEND_URL=http://localhost:3001
+```bash 
+FRONTEND_URL=http://localhost:3001
 PORT=3000
-
+```
 
 3. Set up the frontend:
 
 Create a `.env` file in the `fe_url_metadata_fetcher` directory and add:
 
-``` REACT_APP_BACKEND_URL=http://localhost:3000
+```bash
+REACT_APP_BACKEND_URL=http://localhost:3000
 PORT=3001 
+```
 
 4. Start the backend server:
 
-``` cd ../be_url_metadata_fetcher
+```bash cd ../be_url_metadata_fetcher
 npm start 
+```
 
 5. In a new terminal, start the frontend development server:
 
-``` cd ../fe_url_metadata_fetcher
+```bash cd ../fe_url_metadata_fetcher
 npm start 
+```
 
 6. Open [http://localhost:3001](http://localhost:3001) in your browser.
 
@@ -60,13 +69,15 @@ npm start
 
 To run the test suite for the backend:
 
-``` cd be_url_metadata_fetcher
+```bash cd be_url_metadata_fetcher
 npm run test 
+```
 
 To run the test suite for the frontend:
 
-``` cd fe_url_metadata_fetcher
+```bash cd fe_url_metadata_fetcher
 npm test -- --watchAll=false 
+```
 
 ## Design Choices and Trade-offs
 
