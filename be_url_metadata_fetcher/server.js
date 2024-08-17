@@ -31,13 +31,19 @@ app.use(cors({
 app.use(morgan('combined'));
 app.use(cookieParser());
 
-if (process.env.NODE_ENV !== 'test') {
-    app.use(csrf({ cookie: true }));
-}
 
-app.get('/csrf-token', (req, res) => {
-    res.json({ csrfToken: req.csrfToken() });
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.use(csrf({ 
+      cookie: {
+          secure: true,
+          sameSite: 'none'
+      } 
+  }));
+
+  app.get('/csrf-token', (req, res) => {
+      res.json({ csrfToken: req.csrfToken() });
+  });
+} 
 
 app.post('/fetch-metadata', getUrlsMetadata, (req, res) => {});
 

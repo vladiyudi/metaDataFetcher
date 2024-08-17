@@ -1,7 +1,19 @@
 const request = require('supertest');
+const express = require('express');
 const app = require('../server');
 
 describe('POST /fetch-metadata', () => {
+  let server;
+
+  beforeAll(() => {
+    process.env.NODE_ENV = 'test';
+    server = app.listen(4000);
+  });
+
+  afterAll((done) => {
+    server.close(done);
+  });
+
   it('should return metadata for valid URLs', async () => {
     const response = await request(app)
       .post('/fetch-metadata')

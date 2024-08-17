@@ -1,0 +1,23 @@
+runtime: nodejs20
+
+env: standard
+
+instance_class: F1
+
+entrypoint: node server.js
+
+handlers:
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto
+
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+
+env_variables:
+  NODE_ENV: 'production'
+  FRONTEND_URL: 'https://urlfetcherfe.nw.r.appspot.com'
