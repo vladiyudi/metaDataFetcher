@@ -23,7 +23,7 @@ Live demo: [https://urlfetcherfe.nw.r.appspot.com/](https://urlfetcherfe.nw.r.ap
 
 1. Clone the repository:
 
-``` git clone https://github.com/yourusername/url-metadata-fetcher.git
+```git clone https://github.com/yourusername/url-metadata-fetcher.git
 
 
 2. Set up the backend:
