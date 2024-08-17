@@ -26,16 +26,11 @@ Live demo: [https://urlfetcherfe.nw.r.appspot.com/](https://urlfetcherfe.nw.r.ap
 ```bash 
 git clone https://github.com/vladiyudi/metaDataFetcher.git
 ```
-Enter reposatoroty
-
-```bash 
-cd metaDataFetcher
-```
 
 2. Set up the backend:
 
 ```bash 
-cd be_url_metadata_fetcher
+cd metaDataFetcher/be_url_metadata_fetcher
 ```
 
 Create a `.env` file in the `be_url_metadata_fetcher` directory and add:
@@ -47,11 +42,25 @@ PORT=3000
 
 3. Start the backend server:
 
-```bash cd ../be_url_metadata_fetcher
+Install dependancies
+
+```bash
+npm install
+```
+
+Run backend:
+
+```bash 
 npm start 
 ```
 
 4. Set up the frontend:
+
+In a new terminal, 
+
+```bash
+cd metaDataFetcher/fe_url_metadata_fetcher
+```
 
 Create a `.env` file in the `fe_url_metadata_fetcher` directory and add:
 
@@ -60,10 +69,15 @@ REACT_APP_BACKEND_URL=http://localhost:3000
 PORT=3001 
 ```
 
-5. In a new terminal, start the frontend development server:
+Install dependancies
+
+```bash
+npm install
+```
+
+Run frontend:
 
 ```bash 
-cd ../fe_url_metadata_fetcher
 npm start 
 ```
 
@@ -73,16 +87,18 @@ npm start
 
 To run the test suite for the backend:
 
+Make sure server is stopped
+
 ```bash 
-cd be_url_metadata_fetcher
+cd metaDataFetcher/be_url_metadata_fetcher
 npm run test 
 ```
 
 To run the test suite for the frontend:
 
 ```bash 
-cd fe_url_metadata_fetcher
-npm test --watchAll=false 
+cd metaDataFetcher/fe_url_metadata_fetcher
+npm test -- --watchAll=false 
 ```
 
 ## Design Choices and Trade-offs
